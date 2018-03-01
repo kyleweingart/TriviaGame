@@ -9,7 +9,7 @@ $(document).ready(function() {
     var questionsArray= ["How many times has Liverpool won the Champions League?", "When was the last time Liverpool won the English Premier League?", "How many times has Liverpool won the English Premier League?"];
 
     // correctAnswerArray;
-
+    var index = 0;
     // answerArray;
 
     // gifArray;
@@ -21,18 +21,18 @@ $(document).ready(function() {
 
      
     function newQuestion() {
-      for (var i = 0; i < questionsArray.length; i++) {
+      // for (var i = 0; i < questionsArray.length; i++) {
       $(".click-btn").hide();
       number = 11;
-      question = questionsArray[i];
+      question = questionsArray[index];
       console.log(question);
       
       $(".question-display")
       .empty()
-      .append(questionsArray[i]);
+      .append(questionsArray[index]);
       runTimer();
 
-    }
+    
       
 
       
@@ -55,12 +55,13 @@ $(document).ready(function() {
 
       }
       function threeSeconds(){
-        setTimeout(newQuestion, 10000);
+        setTimeout(newQuestion, 3000);
         if (number === 0) {
           // clearInterval(intervalID);
           $(".time-display")
           .empty()
           .append("Time's Up");
+          index++;
           
         }
       }
@@ -82,9 +83,7 @@ $(document).ready(function() {
     // MAIN PROCESS
     // ============================================================================================================
   
-    // $(".win-display").append(wins);
-    // $(".loss-display").append(losses);
-  
+   
     $(".click-btn").on("click", function(){
       newQuestion();
       }
@@ -92,32 +91,6 @@ $(document).ready(function() {
     )
 
     
-  //     console.log("i was clicked");
-  //     var crystalStoredValue = $(this).attr("crystalvalue");
-  //     console.log(" hi " + crystalStoredValue);
-  //     crystalStoredValue = parseInt(crystalStoredValue);
-  //     console.log("yo " + crystalStoredValue);
-  //     totalScore = totalScore += crystalStoredValue;
-  //     $(".score-display")
-  //       .empty()
-  //       .append(totalScore);
-  //     console.log("total score " + totalScore);
   
-  //     if (totalScore == randNumberChoice) {
-  //       wins++;
-  //       console.log("youwin");
-  //       $(".win-display")
-  //         .empty()
-  //         .append(wins);
-  //       newGame();
-  //     } else if (totalScore > randNumberChoice) {
-  //       losses++;
-  //       console.log("youlose");
-  //       $(".loss-display")
-  //         .empty()
-  //         .append(losses);
-  //       newGame();
-  //     }
-  //   });
   });
   
