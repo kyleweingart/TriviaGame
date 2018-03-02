@@ -94,15 +94,19 @@ body {
 
 #answer-1:hover {
   background-color:#cb2931;
+  cursor: pointer;
 } 
 #answer-2:hover {
   background-color:#cb2931;
+  cursor: pointer;
 } 
 #answer-3:hover {
   background-color:#cb2931;
+  cursor: pointer;
 } 
 #answer-4:hover {
   background-color:#cb2931;
+  cursor: pointer;
 } 
 
 
