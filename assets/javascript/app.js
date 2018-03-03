@@ -19,7 +19,7 @@ $(document).ready(function () {
     ["5 Times", "1990", "18 Times", "Ian Rush", "1962"]
   ]
 
-  var gifArray = ["https://media.giphy.com/media/l0Iy294JIZv3s2FEs/giphy.gif",  "https://youtu.be/XlP9KGjqXf4" ];
+  var gifArray = ["https://media.giphy.com/media/l0Iy294JIZv3s2FEs/giphy.gif",  "../images/dalglish.gif", "https://youtu.be/XlP9KGjqXf4" ];
 
   var correctAnswers= 0;
 
@@ -58,6 +58,9 @@ $(document).ready(function () {
     console.log(question);
 
     runTimer();
+
+    $(".image-display")
+        .empty()
 
     $(".question-display")
       .empty()
@@ -122,6 +125,8 @@ $(document).ready(function () {
 
       if (index < questionsArray.length - 1) {
         index++;
+
+        // working on getting image to show up if question was correct
         
 
       } else {
@@ -146,7 +151,6 @@ $(document).ready(function () {
       .empty()
       .append("Time Remaining: " + number);
     if (number === 0) {
-      console.log(number);
       // stop();
       $(".time-display")
         .empty()
@@ -168,11 +172,30 @@ $(document).ready(function () {
   )
   $("#answer-1").on("click", function () {
       threeSeconds();
-      var clickAnswer = answers[index[0]];
-      if (clickAnswer === answers[5]);
+      console.log(index);  // this index is returning 1  - should be 0- may need to run three seconds after this. 
+      var clickAnswer = answers[index[0]]; 
+      console.log(answers[index[0]]); //this variable is undefined **** there may be issues with the variable index
+      console.log(clickAnswer);
+      if (clickAnswer === answers[5]) {
+      cosole.log("yep");
+      }
+      else {
+        console.log("nope");
+      }
+      // Some of this needs work
+      // Trying to get correct gif to show up based on if answer is right or wrong and what question it is. 
+      // Might use the index variable and then add code below somewhere else? 
+      // clickAnswerIndex=answers[5].indexOf(clickAnswer);
       correctAnswers++;
-      console.log("you the shit");
-    }
+      console.log(index - 1);
+      $(".image-display")
+        .empty()
+        .append('<img src='  + gifArray[index -1] +' />');
+      }
+
+
+      
+    
 
   )
   $("#answer-2").on("click", function () {
@@ -180,7 +203,11 @@ $(document).ready(function () {
       var clickAnswer = answers[index[1]];
       if (clickAnswer === answers[5]);
       correctAnswers++;
-      console.log("you the shit");
+      $(".image-display")
+      .empty()
+      .append('<img src='  + gifArray[index-1] +' />');
+
+      
     }
 
   )
@@ -190,6 +217,10 @@ $(document).ready(function () {
       if (clickAnswer === answers[5]);
       correctAnswers++;
       console.log("you the shit");
+      $(".image-display")
+      .empty()
+      .append('<img src='  + gifArray[2] +' />');
+
     }
 
   )
@@ -199,6 +230,10 @@ $(document).ready(function () {
       if (clickAnswer === answers[5]);
       correctAnswers++;
       console.log("you the shit");
+      $(".image-display")
+      .empty()
+      .append('<img src='  + gifArray[3] +' />');
+
     }
 
   )
