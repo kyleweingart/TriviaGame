@@ -75,7 +75,9 @@ body {
    margin-top: 5%;
  }
 
-
+.time {
+  margin-bottom: 5%;
+}
  .time-display {
    color:  #FEF667;
  }
@@ -87,14 +89,17 @@ body {
    
  }
 
- 
+ img {
+   width:100%;
+   display:block;
+   margin: 0 auto;
+ }
 
 
   
 
  .answer-display{
    margin-top:3% !important;
-   /* font-size: 1.5em;  */
    width: 50% !important;
    margin:auto;
   color:  #FEF667;
